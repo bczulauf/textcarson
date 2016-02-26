@@ -1,6 +1,6 @@
 module.exports = {
     registerRoutes: function(app) {
-        app.get("/", this.home);
+        //app.get("/", this.home);
         app.post("https://demo.twilio.com/welcome/voice/", this.receiveMessage);
     },
     

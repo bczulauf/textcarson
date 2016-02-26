@@ -3,15 +3,15 @@ var twilio = require("twilio");
 var routes = require("./routes");
 var app = express();
 var port = process.env.PORT || 8081;
-var accountSid = process.env.TWILIO_ACCOUNT_SID;
-var authToken = process.env.TWILIO_AUTH_TOKEN;
 
-// Twilio Credentials 
-var accountSid = 'AC3af43c1852f84fb508a5df4ceb47018e'; 
-var authToken = '34f6b118f22d36524c1c028f2a6574c8'; 
+// Twilio Credentials
+var accountSid = process.env.TWILIO_ACCOUNT_SID || 'AC3af43c1852f84fb508a5df4ceb47018e';
+var authToken = process.env.TWILIO_AUTH_TOKEN || '34f6b118f22d36524c1c028f2a6574c8'; 
  
 //require the Twilio module and create a REST client 
-var client = twilio(accountSid, authToken); 
+var client = twilio(accountSid, authToken);
+
+app.use(express.static(__dirname + '/public'));
  
 client.messages.create({ 
 	to: "+12066696351", 
