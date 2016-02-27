@@ -7,7 +7,7 @@ var sampleParameters
 
 if (!parametersFile) {
   sampleParameters = {
-    tenant : 'rrandallaad1.onmicrosoft.com',
+    tenant : 'textcarson.onmicrosoft.com',
     authorityHostUrl : 'https://login.windows.net',
     clientId : '624ac9bd-4c1c-4686-aec8-b56a8991cfb3',
     username : 'frizzo@naturalcauses.com',
