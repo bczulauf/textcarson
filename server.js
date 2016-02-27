@@ -1,6 +1,7 @@
 var express = require("express");
 var twilio = require("twilio");
 var routes = require("./routes");
+var azure = require("azure");
 var app = express();
 var port = process.env.PORT || 8081;
 
@@ -8,7 +9,7 @@ var port = process.env.PORT || 8081;
 var accountSid = process.env.TWILIO_ACCOUNT_SID || 'AC3af43c1852f84fb508a5df4ceb47018e';
 var authToken = process.env.TWILIO_AUTH_TOKEN || '34f6b118f22d36524c1c028f2a6574c8'; 
  
-//require the Twilio module and create a REST client 
+// Require the Twilio module and create a REST client 
 var client = twilio(accountSid, authToken);
 
 app.use(express.static(__dirname + '/public'));
@@ -21,7 +22,7 @@ client.messages.create({
     if (err) {
         console.log(err);
     } else {
-        console.log(message);   
+        //console.log(message);   
     } 
 });
 
@@ -33,7 +34,7 @@ client.messages.create({
     if (err) {
         console.log(err);
     } else {
-        console.log(message);   
+        //console.log(message);   
     } 
 });
 
